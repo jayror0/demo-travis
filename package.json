@@ -1,0 +1,20 @@
+{
+  "name": "demo-travis-ci",
+  "version": "1.0.0",
+  "description": "A demo Node.js project for Travis CI integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "travis-ci",
+    "demo",
+    "nodejs"
+  ],
+  "author": "jayror0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
