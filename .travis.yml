@@ -44,4 +44,5 @@ branches:
     - main
     - master
     - develop
+    - demo
     - /^v\d+\.\d+\.\d+$/
