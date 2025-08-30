@@ -1,0 +1,47 @@
+language: node_js
+
+node_js:
+  - "20" 
+  - "18"  
+  - "16"  
+  - "lts/*" 
+  - "node" 
+
+os: linux
+dist: focal
+
+cache:
+  npm: true
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm test
+  - node index.js
+
+jobs:
+  fast_finish: true
+  allow_failures:
+    - node_js: "node" 
+  include:
+    - node_js: "20"
+      name: "Node.js 20 - Extended Tests"
+      script:
+        - npm test
+        - echo "Running extended tests..."
+        - node index.js
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
+branches:
+  only:
+    - main
+    - master
+    - develop
+    - /^v\d+\.\d+\.\d+$/
